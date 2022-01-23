@@ -1,0 +1,65 @@
+- mongodb : bd Norelacional 
+
+- roboT : gestor de base de datos>mongodb
+
+- postman : herramienta de testing, necesaria
+
+- npm i body-parser --save : procesa la info y la serializa en un obj json
+  para que sea procesada en las peticiones post
+
+- params : parametro que se envia po url,ejem: req.params.id 
+
+- process : es un onjeto global que se actualiza dependiendo del ENV o
+  el entorno donde esta corriendo
+
+- npm start : antes debes en el package configurar para que corra
+
+- git commit -am : "a": agregalo, "m": mensaje al commit
+
+- produccion & desarrollo : se configura en postman: 
+ * produccion : agg la url de heroku > {{url}}/usuario
+ * desarrollo : agg la url de localhost > {{url}}/usuario
+ 
+- npm i mongoose-unique-validator --save
+- npm i bcrypt
+* hasSync(data,'numero de veces');
+
+- findByIdAndUpdate : actualiza el usuario con su resprectivo id
+
+* findByIdAndUpdate(id, body, {new:true, runValidators : true}, (err, userDb) ) : 
++ id : envias el id
++ body : la data
++ {new : true} : indicas que te devuelva el valor cambiado
++ {runValidators : true} : para que ejecute las validaciones que hay en el Schema
++ (err, userDb) : el callback
+
+- npm i underscore : = _
+* pick() : trae los valores del obj filtrando lo requerido
+_.pick(req.body, ['los campos que quieres permitir actualizar]);
+
+- find() : busca todos los registros
+* .limit(5) : solo de 5 en 5 registros
+* .exec() : para que ejecute
+* .skip(5) : salte los primeros 5 registros y despues muestre los otros 5
+
+
+- findByIdAndRemove : para eliminar un userDb
+* findByIdAndUpdate(id,(err, userDb) ) : 
+
+-mLab : 
+* te vs a la pagina te creas una cuenta, buscas tu region, le pones nombre a tu
+base de datos
+
+* hacemos click en la base de datos que creamos, copiamos la cadena de conexion 
+03:36-102
+
+* despues de hacer las config, vas a la pag, y das cick en users, alli le das 
+agregar usuario de base da datos, le pones el nombre y la contraseña
+
+* en make_read_only : lo dejas quieto ya que eso es para permitir si es solo
+para leer o grabar
+
+- 'mongodb://<dbuser>:<dbpassword>@ds213209.mlab.com:13209/cafe'
+- 'mongodb://nombreQLeHayasPuesto:claveQueLeHayasPuesto@ds213209.mlab.com:13209/cafe'
+
+- heroku : 
