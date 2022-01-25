@@ -3,11 +3,12 @@ const bcrypt = require('bcrypt');
 const _ = require('underscore');
 
 const User = require('./models/user');
+const {verificar, verificarRolAdmin} = require('./middlewares/auth');
 
 const app = express();
 
-// RUTAS
-app.get('/usuario', (req,res) => {
+// RUTAS           //verificar es el middleware que se dispara al acceder a esa ruta
+app.get('/usuario', verificar, (req,res) => { 
 
 let desde = req.query.desde || 0;
 desde = Number(desde);
@@ -47,8 +48,8 @@ conteo
 
 });
     
-    
-    app.post('/user', (req,res) => {
+                       // usar dos middlewares
+    app.post('/user', [verificar, verificarRolAdmin], (req,res) => {
     
         let body = req.body;
     
@@ -79,7 +80,8 @@ conteo
     });
 
     
-        app.put('/user/:id', (req,res) => {
+    app.put('/user/:id', [verificar, verificarRolAdmin], (req,res) => {
+    
     
       // id del parametro
 let id = req.params.id;
@@ -103,7 +105,7 @@ User.findByIdAndUpdate(id, body, {new : true, runValidators :true}, (err, userDb
         });
 
 
-app.delete('/user/:id', (req,res) => {
+app.delete('/user/:id', [verificar, verificarRolAdmin], (req,res) => {
 
 let id = req.params.id;
 

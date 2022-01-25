@@ -48,6 +48,19 @@ default : false
 }
 });
 
+
+// lo que haces es no permitir pasar un campo al hacer un json
+user.methods.toJSON = function() {
+
+let usuario = this;
+let userObject = usuario.toObject();
+delete userObject.password;
+
+return userObject;
+
+}
+
+
 user.plugin(uniqueValidator, {message : '{PATH}  debe de ser unico'});
 
 module.exports = mongoose.model('usuario',user);
