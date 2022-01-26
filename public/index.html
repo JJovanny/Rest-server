@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Sing-in</title>
+    <meta name="google-singin-client_id" content="ElIdQueTeGenera.apps.googleusercontent.com">
+</head>
+<body>
+    
+
+<!-- Boton de google sing in -->
+<div class="g-signin2" data-onsuccess="onSingIn"></div>
+
+<script>
+
+function onSingIn(googleUser){
+
+var profile = googleUser.getBasicProfile();
+console.log('id:' + profile.getId() );
+console.log('name:' + profile.getName());
+console.log('img:' + profile.getImg());
+console.log('email:' + profile.getEmail());
+
+var id = googleUser.getAuthResponse().id_token;
+
+var ajax = new XMLHttpRequest();
+ajax.open('POST', '/google');
+ajax.setRequestHeader('Content-Type','aplication/x-ww-form-urlencoded');
+ajax.onload = function(){
+
+    console.log(ajax.responseText);
+}
+
+ajax.send('id_token=' + id);
+
+}
+
+
+</script>
+
+
+<!-- Boton de goggle sing out -->
+<a href="#" onclick="signOut();">Salir</a>
+<script>
+
+function signOut(googleUser){
+
+var auth2 = gapi.auth2.getAuthInstance();
+auth2.signOut().then(function () {
+
+console.log('user signed out');
+
+});
+}
+
+
+</script>
+
+
+
+
+<script src="https://apis.google.com/js/plataform.js" async defer></script>
+</body>
+</html>

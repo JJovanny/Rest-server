@@ -63,4 +63,4 @@ return userObject;
 
 user.plugin(uniqueValidator, {message : '{PATH}  debe de ser unico'});
 
-module.exports = mongoose.model('usuario',user);
+module.exports = mongoose.model('Usuario',user);

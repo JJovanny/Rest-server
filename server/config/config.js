@@ -18,7 +18,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'dev';
 // ========================
 // 60seg, 60min, 24hrs, 30 dias
 
-process.env.EXPIRACION_TOKEN = 60 * 60 * 24 * 30 ;
+process.env.EXPIRACION_TOKEN = '48h' ;
 
 
 // ========================
@@ -48,3 +48,11 @@ urlDb = 'mongodb://<dbuser>:<dbpassword>@ds213209.mlab.com:13209/cafe';
 
 // te puedes inventar cualquier ENV
 process.env.URLDB = urlDb;
+
+
+// ========================
+// GOOGLE CLIENT ID
+// ========================
+
+
+process.env.CLIENT_ID = process.env.CLIENT_ID || 'ElIdQueTeGenera.apps.googleusercontent.com';

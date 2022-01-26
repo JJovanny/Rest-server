@@ -1,4 +1,7 @@
-﻿- mongodb : bd Norelacional 
+﻿-----------------------------------------------------------
+SECTION 07->09
+
+- mongodb : bd Norelacional 
 
 - roboT : gestor de base de datos>mongodb
 
@@ -66,6 +69,9 @@ para leer o grabar
 
 - heroku : git push heroku master / ver la sescion anterior
 
+-----------------------------------------------------------
+SECTION 10
+
 - tokens : es el pin de un disositivo o usuario
 - variables de session : 
 - jsonWebToken : se divide en tres partes :
@@ -95,3 +101,41 @@ en '{expiresIn : 60 * 60 * 24 * 30}' le dices que expire en
 - actualizar tokens automatico en postman : (variables de entorno automaticas)
 * 10 aut de usuario -JWT - 118 
 
+- git push origin master : subirlo a github
+
+-----------------------------------------------------------
+SECTION 11
+
+* ingresa al link
+
+- Google Sign-In - Página Oficial
+
+* se debe generar un id cliente>le damos en configure a project
+ ver video 124 
+
+- path.resolve : nos arma el path (resuelve)
+- npm i google-auth-library --save : 
+
+- async : se utiliza cuando se retorna una promesa
+- await : se utiliza si se hace parte del await
+
+-----------------------------------------------------------
+SECTION 12
+
+-populate : revisa que id existen en el modelo y permetira cargar informacion
+* populate('usuario', 'nombre email') : 
+* 'usuario' = coleccion
+* 'nombre email' = los campos que solo quiero mostrar
+
+- sort('descripcion') : el orden en que quieres que se muestre la info
+
+- RegExp(termino, 'i') : buscador casi inteligente al escribir una palabra
+* termino : la palabra que viene por parametro
+* 'i' : para que sea insensible a las mayusculas y minisculas
+
+
+-----------------------------------------------------------
+SECTION 13
+
+- material icon-theme : para que las carpetas se identifiquen
+- npm i --save express-fileupload : paquete para subir archivos y de mas
