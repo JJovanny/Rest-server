@@ -20,7 +20,9 @@
     "hbs": "^4.2.0",
     "method-override": "^3.0.0",
     "mongoose": "^6.1.6",
+    "mongoose-unique-validator": "^3.0.0",
     "passport": "^0.5.2",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "underscore": "^1.13.2"
   }
 }

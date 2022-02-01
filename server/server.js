@@ -16,9 +16,8 @@ app.use(bodyParser.json());
 app.use(require('./routes/index'));
 
 
-// Habilitar la carpeta public
+// Habilitar las carpetas
 app.use(express.static(path.resolve(__dirname +'../public') ));
-
 
 
 // CONECTION

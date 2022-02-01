@@ -49,8 +49,27 @@ if(usuario.rol != 'ADMIN'){
 
 next();
 
+}
+
+
+
+// ========================
+// VERIFICAR ROL USUARIO
+// ========================
+let verificarTokenImg = (req, res, next) => {
+
+let token = req.query.token;
+
+jw.verify(token, process.env.SEED, (err,decoded) => {
+
+if(err) res.status(401).json({ok : false, err});
+
+req.usuario = decoded.usuario;
+next();
+
+});
 
 }
 
 
-module.exports = {verificar,verificarRolAdmin};
+module.exports = {verificar,verificarRolAdmin, verificarTokenImg};

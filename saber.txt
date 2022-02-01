@@ -139,3 +139,13 @@ SECTION 13
 
 - material icon-theme : para que las carpetas se identifiquen
 - npm i --save express-fileupload : paquete para subir archivos y de mas
+
+- si no vienen archivos
+if(!req.files) return res.status(400).json({ok : false, err});
+* si es solo una linea de codigo no hace falta poner las llaves {}
+
+- mv() : es para decir donde almacenar el archivo subido
+- indexOf() : para buscar en un array
+- fs.existsSync(pathImg) : para saber si un archivo existe
+- fs.unlinkSync(pathImg) : para borrar un archivo
+- res.sendFile('./ruta/a/enviar.jpg') : enviar un archivo
